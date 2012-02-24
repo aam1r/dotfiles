@@ -1,6 +1,27 @@
+" pathogen
 call pathogen#runtime_append_all_bundles()
 
-" Solarized theme
+" vim settings
+set number
+syntax on
+filetype off
+filetype plugin indent on
+
+" text formatting
+set backspace=2
+set autoindent
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set expandtab
+set textwidth=80
+set hlsearch
+
+" command-t
+let g:CommandTMaxHeight=10
+
+" solarized theme
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
@@ -8,6 +29,5 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colorscheme solarized
 
-" Tagbar
-let g:tagbar_usearrows = 1
-nnoremap <leader>l :TagbarToggle<CR>
+" mappings
+nnoremap <F5> :GundoToggle<CR>
