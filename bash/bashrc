@@ -1,0 +1,3 @@
+# Color-ify terminal in vim
+export TERM="xterm-256color"
+
