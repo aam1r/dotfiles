@@ -21,13 +21,5 @@ set hlsearch
 " command-t
 let g:CommandTMaxHeight=10
 
-" solarized theme
-set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-colorscheme solarized
-
 " mappings
 nnoremap <F5> :GundoToggle<CR>
