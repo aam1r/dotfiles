@@ -23,3 +23,8 @@ let g:CommandTMaxHeight=10
 
 " mappings
 nnoremap <F5> :GundoToggle<CR>
+
+" better colors
+set t_Co=16
+set background=dark
+colorscheme solarized
