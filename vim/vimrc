@@ -4,7 +4,7 @@ call pathogen#runtime_append_all_bundles()
 " vim settings
 set number
 syntax on
-filetype off
+filetype on
 filetype plugin indent on
 
 " text formatting
@@ -23,8 +23,14 @@ let g:CommandTMaxHeight=10
 
 " mappings
 nnoremap <F5> :GundoToggle<CR>
+nnoremap <silent> <F9> :TagbarToggle<CR>
 
-" better colors
+" solarized colors
 set t_Co=16
+let g:solarized_termcolors=16
 set background=dark
 colorscheme solarized
+
+" highlight current line
+:hi CursorLine   cterm=NONE
+set cursorline
