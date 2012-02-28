@@ -1,9 +1,8 @@
 # Credits: http://github.com/mathiasbynens
 
 # User specific environment and startup programs
-PATH=$PATH:$HOME/bin
-export PATH
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:~/devscripts:~/devscripts/gerrit
 
 # Colors
 export GREP_OPTIONS='--color=auto'

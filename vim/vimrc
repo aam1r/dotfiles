@@ -17,6 +17,11 @@ set smarttab
 set expandtab
 set textwidth=80
 set hlsearch
+set incsearch
+
+" switch tabs
+map = gt<CR>
+map - gT<CR>
 
 " command-t
 let g:CommandTMaxHeight=10
