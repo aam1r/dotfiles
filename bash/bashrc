@@ -1,5 +1,0 @@
-# Git completion
-source $HOME/git-completion.bash
-
-# Load RVM if present
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

@@ -1,0 +1,40 @@
+# git+vim functions
+# open all files for the current commit in vim
+function opencommit {
+  vim -p $(git diff HEAD^ --name-only)
+}
+
+# misc bash functions
+# Usage: waitforpid 311 ; sendEmail "long running task finished"
+function waitforpid {
+  while ps -p $1 1>/dev/null 2> /dev/null; do
+    sleep 1;
+  done
+}
+
+# Usage: waitforprocess myscript.py ; sendEmail "long running script finished"
+function waitforprocess {
+  while ps -p $(pgrep $1) 1>/dev/null 2> /dev/null; do
+    sleep 1;
+    done
+}
+
+# returns the number of seconds a process has been alive by looking at /proc
+# folder creation time for the process
+function pid_seconds {
+  echo $(($(date +%s) - $(stat -c '%Y' /proc/$1)))
+}
+
+# find a useable SSH agent
+ssh-reagent () {
+  for agent in /tmp/ssh-*/agent.*; do
+    echo "Trying $agent"
+    export SSH_AUTH_SOCK=$agent
+    if timeout -t 2 ssh-add -l 2>&1 > /dev/null; then
+      echo Found working SSH Agent:
+      ssh-add -l
+      return
+    fi
+  done
+  echo Cannot find ssh agent - maybe you should reconnect and forward it?
+}

@@ -1,0 +1,7 @@
+# git aliases
+alias g=git
+
+# ruby aliases
+alias be="bundle exec"
+alias ber="bundle exec rake"
+alias ss="bundle exec spec --drb"

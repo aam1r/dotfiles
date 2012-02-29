@@ -1,12 +1,17 @@
 # Credits: http://github.com/mathiasbynens
 
-# Load ~/.bashrc, ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases 
-# and ~/.functions. ~/.extra can be used for settings you don’t want 
-# to commit
-for file in ~/.{bashrc,extra,bash_prompt,exports,aliases,functions}; do
+# Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
+# ~/.extra can be used for settings you don’t want to commit
+for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
+
+# Load additional scripts
+for f in ~/scripts/*.bash; do source $f; done
+
+# Load RVM if present
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
