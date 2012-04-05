@@ -3,7 +3,7 @@
 # User specific environment and startup programs
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:~/scripts
-export PATH=$PATH:~/devscripts:~/devscripts/gerrit:~/starways
+export PATH=$PATH:~/devscripts:~/devscripts/gerrit
 
 # Colors
 export GREP_OPTIONS='--color=auto'

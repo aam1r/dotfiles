@@ -1,7 +1,12 @@
-# git aliases
-alias g=git
+# shorthand aliases
+alias v='vim'
+alias g='git'
 
 # ruby aliases
-alias be="bundle exec"
-alias ber="bundle exec rake"
-alias ss="bundle exec spec --drb"
+alias be='bundle exec'
+alias ber='bundle exec rake'
+alias ss='bundle exec rspec --drb'
+
+# causes
+alias r='touch ~/causes/tmp/restart.txt'
+alias con='~/causes/script/rails console'

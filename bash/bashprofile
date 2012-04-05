@@ -7,6 +7,9 @@ for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
 done
 unset file
 
+# Maintain bash history in different sessions
+shopt -s histappend
+
 # Load additional scripts
 for f in ~/scripts/*.bash; do source $f; done
 
