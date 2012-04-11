@@ -16,7 +16,6 @@ set history=1000                  " longer search and command history (default i
 set backupdir=~/.vim/tmp/backup,. " keep backup files out of the way
 set directory=~/.vim/tmp/swap,.   " keep swap files out of the way
 set cursorline                    " highlight current line
-set showmatch                     " show matching brackets
 set nojoinspaces                  " don't autoinsert two spaces after '.', '?', '!' for join command
 set wildignore+=*.o,.git          " patterns to ignore during file-navigation
 set shortmess+=A                  " ignore annoying swapfile messages
