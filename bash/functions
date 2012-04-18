@@ -1,3 +1,8 @@
+# serve files under current dir at http://localhost:8000
+function webserver {
+  python -m SimpleHTTPServer
+}
+
 # git+vim functions
 # open all files for the current commit in vim
 function opencommit {
