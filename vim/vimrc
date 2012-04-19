@@ -48,8 +48,11 @@ autocmd FileType ruby set shiftwidth=2
 autocmd FileType c set tabstop=4
 autocmd FileType c set shiftwidth=4
 
-" Remove whitespace
+" Remove trailing whitespace automatically
 autocmd FileType ruby,javascript,html autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Remote trailing whitespace in entire file
+nnoremap <silent> <leader>zz :let _last_search=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_last_search <Bar> :noh<CR>
 
 " Color scheme
 set background=dark
