@@ -30,18 +30,6 @@ function pid_seconds {
   echo $(($(date +%s) - $(stat -c '%Y' /proc/$1)))
 }
 
-function taildev {
-  rm ~/causes/log/development.log
-  touch ~/causes/log/development.log
-  tail -f ~/causes/log/development.log
-}
-
-function taildebug {
-  rm ~/causes/log/debug.log
-  touch ~/causes/log/debug.log
-  tail -f ~/causes/log/debug.log
-}
-
 # find a useable SSH agent
 ssh-reagent () {
   for agent in /tmp/ssh-*/agent.*; do
