@@ -56,8 +56,7 @@ nnoremap <silent> <leader>zz :let _last_search=@/ <Bar> :%s/\s\+$//e <Bar> :let 
 
 " Color scheme
 set background=dark
-color elflord
-" color solarized
+color solarized
 
 " Command-T
 let g:CommandTMaxHeight=10
