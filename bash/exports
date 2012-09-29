@@ -1,7 +1,10 @@
 # Credits: http://github.com/mathiasbynens
 
 # User specific environment and startup programs
+export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:/usr/local/mysql/bin
+export PATH=$PATH:/usr/local/git/bin/
 
 # Colors
 export GREP_OPTIONS='--color=auto'
@@ -10,3 +13,6 @@ export CLICOLOR=1
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
+
+# Program specific
+export CC=/usr/bin/gcc-4.2

@@ -21,9 +21,9 @@ set shortmess+=A                  " ignore annoying swapfile messages
 set shortmess+=I                  " no splash screen
 
 " All languages
-set shiftwidth=2                  " spaces per tab (when shifting)
+set shiftwidth=4                  " spaces per tab (when shifting)
 set shiftround                    " always indent by multiple of shiftwidth
-set tabstop=2                     " spaces per tab
+set tabstop=4                     " spaces per tab
 set expandtab                     " always use spaces instead of tabs
 set smarttab                      " <tab>
 set autoindent                    " auto-indent
