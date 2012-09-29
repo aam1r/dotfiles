@@ -1,45 +1,46 @@
-# serve files under current dir at http://localhost:8000
-function webserver {
-  python -m SimpleHTTPServer
-}
-
-# git+vim functions
-# open all files for the current commit in vim
+# ================ Git and Vim functions ================
+# Open all files for the current commit in vim
 function opencommit {
-  vim -p $(git diff HEAD^ --name-only)
+    vim -p $(git diff HEAD^ --name-only)
 }
 
-# misc bash functions
-# Usage: waitforpid 311 ; sendEmail "long running task finished"
+# ================ Bash functions ================
+# Wait for pid to finish executing
+# Usage: waitforpid 311
 function waitforpid {
-  while ps -p $1 1>/dev/null 2> /dev/null; do
-    sleep 1;
-  done
-}
-
-# Usage: waitforprocess myscript.py ; sendEmail "long running script finished"
-function waitforprocess {
-  while ps -p $(pgrep $1) 1>/dev/null 2> /dev/null; do
-    sleep 1;
+    while ps -p $1 1>/dev/null 2> /dev/null; do
+        sleep 1;
     done
 }
 
-# returns the number of seconds a process has been alive by looking at /proc
-# folder creation time for the process
-function pid_seconds {
-  echo $(($(date +%s) - $(stat -c '%Y' /proc/$1)))
+# Wait for process to finish executing
+# Usage: waitforprocess myscript.py
+function waitforprocess {
+    while ps -p $(pgrep $1) 1>/dev/null 2> /dev/null; do
+        sleep 1;
+    done
 }
 
-# find a useable SSH agent
+# Returns the number of seconds a process has been alive by looking at /proc
+function pid_seconds {
+    echo $(($(date +%s) - $(stat -c '%Y' /proc/$1)))
+}
+
+# Find a useable SSH agent when running an agent session
 ssh-reagent () {
-  for agent in /tmp/ssh-*/agent.*; do
-    echo "Trying $agent"
-    export SSH_AUTH_SOCK=$agent
-    if timeout -t 2 ssh-add -l 2>&1 > /dev/null; then
-      echo Found working SSH Agent:
-      ssh-add -l
-      return
-    fi
-  done
-  echo Cannot find ssh agent - maybe you should reconnect and forward it?
+    for agent in /tmp/ssh-*/agent.*; do
+        echo "Trying $agent"
+        export SSH_AUTH_SOCK=$agent
+        if timeout -t 2 ssh-add -l 2>&1 > /dev/null; then
+            echo Found working SSH Agent:
+            ssh-add -l
+            return
+        fi
+    done
+    echo Cannot find ssh agent - maybe you should reconnect and forward it?
+}
+
+# Serve files under current dir at http://localhost:8000
+function webserver {
+    python -m SimpleHTTPServer
 }
