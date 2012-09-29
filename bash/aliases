@@ -1,8 +1,8 @@
-# shorthand aliases
+# Commonly-used system-wide programs
 alias v='vim'
 alias g='git'
 
-# ruby aliases
+# Ruby
 alias be='bundle exec'
 alias ber='bundle exec rake'
 alias ss='bundle exec rspec --drb'
