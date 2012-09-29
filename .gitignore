@@ -1,4 +1,10 @@
- *.DS_Store
- .*.sw[a-z]
- *.un~
- Session.vim
+# Mac specific
+*.DS_Store
+
+# Unneeded vim files
+.*.sw[a-z]
+*.un~
+vim/backups
+vim/view
+vim/.netrwhist
+Session.vim
