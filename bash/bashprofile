@@ -1,8 +1,5 @@
-# Credits: http://github.com/mathiasbynens
-
-# Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
-# ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
+# Load ~/.exports, ~/.aliases and ~/.functions
+for file in ~/.{exports,aliases,functions}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -10,19 +7,16 @@ unset file
 # Maintain bash history in different sessions
 shopt -s histappend
 
-# Load additional scripts
-for f in ~/scripts/*.bash; do source $f; done
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
 
 # Load RVM if present
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob
-
+# Fix brew autojump error
 if [ -f `brew --prefix`/etc/autojump ]; then
   . `brew --prefix`/etc/autojump
 fi
 
-# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring
-# wildcards
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
