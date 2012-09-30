@@ -7,10 +7,19 @@
     br = branch
     co = checkout
     st = status
-    oneline = log --oneline
     patch = add --patch
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     sha1 = !sh -c 'git rev-parse ${1-`echo HEAD`}' -
+
+    # diff
+    d = diff                          # diff unstaged changes
+    dc = diff --cached                # diff staged changes
+    last = diff HEAD^                 # diff last committed change
+
+    # logging
+    oneline = log --oneline
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[format]
+    pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [color]
     ui = auto
 [color "branch"]
@@ -38,7 +47,5 @@
     show-branch = true
 [log]
     decorate = short
-[core]
-    excludesfile = /Users/aam1r/.global_ignore
 [credential]
     helper = osxkeychain
