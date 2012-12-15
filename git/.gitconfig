@@ -1,0 +1,48 @@
+[alias]
+    br = branch
+    co = checkout
+    st = status
+    patch = add --patch
+    sha1 = !sh -c 'git rev-parse ${1-`echo HEAD`}' -
+
+    # diff
+    d = diff                          # diff unstaged changes
+    dc = diff --cached                # diff staged changes
+    last = diff HEAD^                 # diff last committed change
+
+    # logging
+    oneline = log --oneline
+    l = log --pretty=oneline -n 20 --graph
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+[color]
+    # Use colors in Git commands that are capable of colored output when outputting to the terminal
+    ui = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+		meta = yellow bold
+		frag = magenta bold
+		old = red bold
+		new = green bold
+    whitespace = yellow reverse
+[color "interactive"]
+    prompt = green bold
+    header = cyan
+    help = yellow
+    error = red bold
+[color "status"]
+    changed = yellow
+[core]
+		excludesfile = ~/.gitignore
+		# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
+		whitespace = space-before-tab,indent-with-non-tab,trailing-space
+[format]
+    pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+[merge]
+		# Include summaries of merged commits in newly created merge commit messages
+		log = true
