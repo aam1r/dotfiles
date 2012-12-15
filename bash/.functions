@@ -1,10 +1,32 @@
-# ================ Git and Vim functions ================
+# Syntax-highlight JSON strings or files
+# Usage: `json '{"foo":42}'` or `echo '{"foo":42}' | json`
+function json() {
+	if [ -t 0 ]; then # argument
+		python -mjson.tool <<< "$*" | pygmentize -l javascript
+	else # pipe
+		python -mjson.tool | pygmentize -l javascript
+	fi
+}
+
+# Determine size of a file or total size of a directory
+function fs() {
+	if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh
+	else
+		local arg=-sh
+	fi
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@"
+	else
+		du $arg .[^.]* *
+	fi
+}
+
 # Open all files for the current commit in vim
 function opencommit {
     vim -p $(git diff HEAD^ --name-only)
 }
 
-# ================ Bash functions ================
 # Wait for pid to finish executing
 # Usage: waitforpid 311
 function waitforpid {
