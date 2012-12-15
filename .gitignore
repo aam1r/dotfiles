@@ -1,6 +1,12 @@
 # Compiled Python files
 *.pyc
 
+# vim files
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
 # Folder view configuration files
 .DS_Store
 Desktop.ini
