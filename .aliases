@@ -14,6 +14,7 @@ alias gd="cd ~/Google\ Drive/"
 alias h="history"
 alias o="open ."
 alias s="cd ~/src"
+alias t="cd ~/tmp"
 alias v="vim"
 
 # Detect which `ls` flavor is in use
