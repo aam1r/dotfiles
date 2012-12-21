@@ -1,4 +1,4 @@
-" pathogen
+" Pathogen
 call pathogen#infect()             " add .vim/bundle subdirs to runtime path
 call pathogen#helptags()           " auto update help tags for each directory in runtimepath
 
@@ -102,3 +102,13 @@ set cursorline
 "   %P percentage through buffer
 "   %) end of width specification
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+
+" Disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
