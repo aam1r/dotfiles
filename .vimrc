@@ -27,10 +27,16 @@ set tabstop=4                      " spaces per tab
 set expandtab                      " always use spaces instead of tabs
 set smarttab                       " <tab>
 set autoindent                     " auto-indent
+set smartindent
 set textwidth=80                   " auto-wrap at 80 cols
 set cc=80                          " show border at 80 cols
-autocmd BufWritePre * :%s/\s\+$//e " automatically removing all trailing whitespace
 nore ; :                           " make ; do the same as : for quick-typing
+
+" Folding
+set foldmethod=indent              " fold based on indent
+set foldnestmax=10                 " deepest fold is 10 levels
+set nofoldenable                   " don't fold by default
+set foldlevel=1
 
 " Automatic, language-dependent indentation, syntax coloring and other functionality
 filetype indent plugin on
@@ -39,10 +45,18 @@ syntax on
 " git commit messages
 autocmd FileType gitcommit setlocal textwidth=72
 
+" Remove trailing whitespace automatically
+autocmd FileType php,python,ruby,javascript,html autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 " C
 autocmd FileType c set smartindent
 autocmd FileType c set tabstop=4
 autocmd FileType c set shiftwidth=4
+
+" PHP
+autocmd FileType php set smartindent
+autocmd FileType php set tabstop=2
+autocmd FileType php set shiftwidth=2
 
 " Python
 autocmd FileType python set smartindent
@@ -76,12 +90,14 @@ set noerrorbells visualbell t_vb=
 " Gundo
 nnoremap <F5> :GundoToggle<CR>
 
-" Use -/+ keys to switch tabs
-map = gt<CR>
-map - gT<CR>
+" Use hjkl keys to switch tabs
+map <c-j> gT
+map <c-k> gt
+map <c-h> gT
+map <c-l> gt
 
 " Highlight current line
-:hi CursorLine   cterm=NONE
+:hi CursorLine cterm=NONE
 set cursorline
 
 " Status line
