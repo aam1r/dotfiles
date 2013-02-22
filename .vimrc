@@ -50,22 +50,18 @@ autocmd FileType gitcommit setlocal textwidth=72
 autocmd BufWritePre * :%s/\s\+$//e
 
 " C
-autocmd FileType c set smartindent
 autocmd FileType c set tabstop=4
 autocmd FileType c set shiftwidth=4
 
 " PHP
-autocmd FileType php set smartindent
 autocmd FileType php set tabstop=2
 autocmd FileType php set shiftwidth=2
 
 " Python
-autocmd FileType python set smartindent
 autocmd FileType python set tabstop=4
 autocmd FileType python set shiftwidth=4
 
 " Ruby
-autocmd FileType ruby set smartindent
 autocmd FileType ruby set tabstop=2
 autocmd FileType ruby set shiftwidth=2
 
