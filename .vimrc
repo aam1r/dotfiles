@@ -47,7 +47,7 @@ syntax on
 autocmd FileType gitcommit setlocal textwidth=72
 
 " Remove trailing whitespace automatically
-autocmd FileType php,python,ruby,javascript,html autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " C
 autocmd FileType c set smartindent
