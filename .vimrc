@@ -34,9 +34,10 @@ nore ; :                           " make ; do the same as : for quick-typing
 
 " Folding
 set foldmethod=indent              " fold based on indent
-set foldnestmax=10                 " deepest fold is 10 levels
+set foldnestmax=2
 set nofoldenable                   " don't fold by default
-set foldlevel=1
+nnoremap <space> za
+vnoremap <space> zf
 
 " Automatic, language-dependent indentation, syntax coloring and other functionality
 filetype indent plugin on
