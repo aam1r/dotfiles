@@ -39,6 +39,13 @@ set nofoldenable                   " don't fold by default
 nnoremap <space> za
 vnoremap <space> zf
 
+" Enable system-wide clipboard
+if has("unnamedplus")
+  set clipboard=unnamedplus
+elseif has("clipboard")
+  set clipboard=unnamed
+endif
+
 " Automatic, language-dependent indentation, syntax coloring and other functionality
 filetype indent plugin on
 syntax on
