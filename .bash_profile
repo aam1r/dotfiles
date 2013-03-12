@@ -1,5 +1,5 @@
-# Add `~/bin` to the `$PATH`
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+# Custom $PATH
+export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -31,3 +31,6 @@ complete -W "NSGlobalDomain" defaults
 
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+# Enable rbenv shims
+eval "$(rbenv init -)"
