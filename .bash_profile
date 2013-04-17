@@ -1,6 +1,9 @@
 # Custom $PATH
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 
+# Point OSX to Cellar python
+export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.secret can be used for other settings you don’t want to commit.
@@ -34,3 +37,6 @@ complete -W "NSGlobalDomain" defaults
 
 # Enable rbenv shims
 eval "$(rbenv init -)"
+
+# z
+. `brew --prefix`/etc/profile.d/z.sh
