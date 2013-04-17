@@ -116,7 +116,7 @@ set cursorline
 "   %) end of width specification
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
-" Disable arrow keys
+" Disable arrow keys and use hjkl instead
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -125,3 +125,6 @@ imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
+
+" Disable ESC and C-c instead
+imap <ESC> <nop>
