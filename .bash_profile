@@ -40,3 +40,7 @@ eval "$(rbenv init -)"
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
+
+# virtualenv
+export WORKON_HOME=~/envs
+source /usr/local/bin/virtualenvwrapper.sh
