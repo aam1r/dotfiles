@@ -17,6 +17,7 @@ alias p="python"
 alias s="cd ~/src"
 alias t="cd ~/tmp"
 alias v="vim"
+alias gpr="g pull --rebase"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

@@ -45,10 +45,6 @@ color solarized
 " disable vim bells
 set noerrorbells visualbell t_vb=
 
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 map <leader>l :Align
 nmap <leader>a :Ack
 nmap <leader>b :CtrlPBuffer<CR>
@@ -72,15 +68,6 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
-" open a NERDTree automatically when vim starts up
-autocmd vimenter * NERDTree
-
-" open a NERDTree automatically when vim starts up if no files were specified
-autocmd vimenter * if !argc() | NERDTree | endif
-
-" close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
 " fix cursor in tmux
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -101,5 +88,12 @@ map <left> <nop>
 map <right> <nop>
 map <up> <nop>
 
+" use hjkl keys to switch tabs
+map <C-h> gT<CR>
+map <C-l> gt<CR>
+map <C-n> :tabnew<CR>
+
 " custom status line
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+
+let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")': ['<c-t>'], 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'] }
