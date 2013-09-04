@@ -5,16 +5,10 @@
 Clone the repository (I keep it in `~/src/dotfiles/`). The bootstrapper script
 will pull in the latest version and copy the files to your home folder.
 
-
 ```bash
-git clone https://github.com/aam1r/dotfiles.git && cd dotfiles && source
-bootstrap.sh
-```
-
-To update, `cd` into your local `dotfiles` repository and then:
-
-```bash
-source bootstrap.sh
+git clone https://github.com/aam1r/dotfiles.git
+cd dotfiles
+python bootstrap.py
 ```
 
 ## Usage
@@ -36,8 +30,6 @@ git config --global user.email "$GIT_AUTHOR_EMAIL"
 You could also use `~/.secret` to override settings, functions, aliases and
 declare custom `$PATH` variables.
 
-## Thanks to…
+## Plug
 
-* [Mathias Bynens](http://mathiasbynens.be/) for sharing his [amazing collection
-  of dotfiles](https://github.com/mathiasbynens/dotfiles). Most of this was
-  shamelessly stolen from him. 
+Looking into modifying your `vimrc` without spending hours? Check out [sachet](http://yoursachet.com)!
