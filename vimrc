@@ -72,6 +72,15 @@ autocmd BufRead,BufNewFile *.md set filetype=markdown
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+" open a NERDTree automatically when vim starts up
+autocmd vimenter * NERDTree
+
+" open a NERDTree automatically when vim starts up if no files were specified
+autocmd vimenter * if !argc() | NERDTree | endif
+
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 " fix cursor in tmux
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
