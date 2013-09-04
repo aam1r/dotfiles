@@ -27,11 +27,14 @@ set nojoinspaces                   " don't autoinsert two spaces after '.', '?',
 set number                         " show line numbers
 set ruler                          " show where you are
 set scrolloff=3                    " show context above/below cursorline
-set shiftwidth=2                   " normal mode indentation commands use 2 spaces
+set shiftround                     " always indent by multiple of shiftwidth
+set shiftwidth=2                   " spaces per tab (when shifting)
 set shortmess+=A                   " ignore annoying swapfile messages
 set shortmess+=I                   " no splash screen
 set showcmd
 set smartcase                      " case-sensitive search if any caps
+set smartindent
+set smarttab                       " <tab>
 set softtabstop=2                  " insert mode tab and backspace use 2 spaces
 set tabstop=8                      " actual tabs occupy 8 characters
 set wildignore+=log/**,node_modules/**,target/**,tmp/**,*.rbc,*.o,.git,*.pyc
